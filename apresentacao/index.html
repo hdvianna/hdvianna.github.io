@@ -619,17 +619,31 @@ hello.greet();//Exibirá Hello Javascript
 							   <td>Decremento (<code>--</code>)</td>
 									<td>Sendo <code>x</code> = 3, então <code>--x</code> atribui 2 em <code>x</code> e retorna 2; <code>x--</code> retorna 3 e atribui 2</td>
 							  </tr>
-							  <tr>
-							   <td>Negação unária (<code>-</code>)</td>
-							   <td>Sendo <code>x</code> = 3, então <code>-x</code> retorna -3.</td>
-							  </tr>
-							  <tr>
-							   <td>Mais unário (<code>+</code>)</td>
-							   <td>Converte para número: <code>+"3"</code> retorna <code>3</code>.<br>
-							    <code>+true</code> retorna <code>1.</code></td>
-							  </tr>
 							 </tbody>
 							</table>
+					</section>
+					<section>
+						<h2>Operadores aritméticos</h2>
+						<table class="fullwidth-table">
+						<thead>
+							<tr>
+							<th scope="col">Operador</th>
+							<th scope="col">Exemplo</th>
+							</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>Negação unária e subtração (<code>-</code>)</td>
+							<td>Sendo <code>x</code> = 3, então <code>-x</code> retorna -3.</td>
+							</tr>
+							<tr>
+							<td>Adição e concatenação (<code>+</code>)</td>
+							<td>Converte para número: <code>+"3"</code> retorna <code>3</code>.<br>
+								<code>+true</code> retorna <code>1.</code><br><code>"1" + 1</code>,
+								retorna "11"</td>
+							</tr>
+						</tbody>
+						</table>
 					</section>
 					<section>
 						<h2>Operadores binários</h2>
@@ -693,6 +707,229 @@ hello.greet();//Exibirá Hello Javascript
 						  <tr>
 						   <td>Negação lógica(<code>!</code>)</td>
 						   <td><code>!expr</code></td>
+						  </tr>
+						 </tbody>
+						</table>
+					</section>
+					<section>
+						<h2>Operador ternário</h2>
+						<pre><code data-trim contenteditable>
+//condição ? retorno se condição for verdadeira : retorno se for falsa
+var a = 1, b = 2;
+var max = a > b ? a : b;
+						</code></pre>
+					</section>
+					<section>
+						<h2>Membros</h2>
+						<pre><code data-trim contenteditable>
+/**
+ * . ou []: Usados para acessar membros de um objeto ou vetor
+ */
+var vetor = [1,2,3];
+console.log(vetor[0]); //Escreve 1
+var obj = {
+  "nome": "José",
+  "sobrenome": "Saramago"
+};
+console.log(obj["nome"]); //Escreve "José"
+console.log(obj.sobrenome); //Escreve "Saramago"
+						</code></pre>
+				</section>
+					<section>
+						<h2>in</h2>
+						<pre><code data-trim contenteditable>
+/**
+ * in: Retorna true se o índice existe na coleção
+ */
+console.log(0 in vetor); //Escreve true
+console.log(3 in vetor); //Escreve false
+console.log("nome" in obj); //Escreve true
+						</code></pre>
+				</section>
+				<section>
+					<h2>new e this</h2>
+					<pre><code data-trim contenteditable>
+/**
+ * new: Constrói um objeto a partir de uma função
+ * this: Referência ao objeto atual
+ */
+function Cao () {
+  this.latir = function() {
+    console.log("Au");
+  }
+}
+var maizena = new Cao();
+maizena.latir();
+						</code></pre>
+					</section>
+				<section>
+					<h2>delete</h2>
+					<pre><code data-trim contenteditable>
+/**
+ * delete: Exclui um objeto, um atributo de um objeto,
+ *         ou item de um vetor
+ */
+delete obj.nome;
+console.log(obj.nome);//Escreve undefined
+
+delete obj;
+console.log(obj.sobrenome);//Lança uma exceção
+
+var vetor = ["a", "e", "i", "o", "u"];
+delete vetor[2];
+console.log(vetor);//Resultado difere entre navegadores
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>typeof</h2>
+						<pre><code data-trim contenteditable>
+/**
+ * typeof: Retorna uma string do tipo não avaliado do operando.
+ *         Os valores possíveis são: "function", "string", "number",
+ *         "object" ou "undefined"
+ */
+console.log(typeof (function(){})); //escreve "function"
+console.log(typeof "Hello world"); //escreve "string"
+console.log(typeof 1); //escreve "number"
+console.log(typeof {}); //escreve "object"
+console.log(typeof undefined); //escreve "undefined"
+						</code></pre>
+					</section>
+					<section>
+						<h2>instanceof</h2>
+						<pre><code data-trim contenteditable>
+/**
+ * instanceof: Retorna true se o objeto é uma instância da função
+ *             requisitada
+ */
+var agora = new Date();
+console.log(agora instanceof Date); //Escreve true
+console.log(agora instanceof Object); //Escreve true
+console.log(agora instanceof Array); //Escreve false
+var vetor = [];
+console.log(vetor instanceof Date); //Escreve false
+console.log(vetor instanceof Object); //Escreve true
+console.log(vetor instanceof Array); //Escreve true
+
+console.log(typeof Date);//Escreve "function"
+console.log(typeof Object);//Escreve "function"
+console.log(typeof Array);//Escreve "function"
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>void</h2>
+						<pre><code data-trim contenteditable>
+/**
+* void: Executa a expressão, mas não retorna valor
+*/
+function voidtest() {
+  console.log("Teste void!");
+  return "teste";
+}
+var teste = void(voidtest()); //Escreve "Teste void!"
+console.log(teste); //Escreve undefined
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Precedência de operadores</h2>
+						<table class="standard-table">
+						 <thead>
+						  <tr>
+						   <th scope="col">Tipo de operador</th>
+						   <th scope="col">Operadores individuais</th>
+						  </tr>
+						 </thead>
+						 <tbody>
+						  <tr>
+						   <td>membro</td>
+						   <td><code>. []</code></td>
+						  </tr>
+						  <tr>
+						   <td>chamada / criação</td>
+						   <td><code>() new</code></td>
+						  </tr>
+						  <tr>
+						   <td>negação/incremento</td>
+						   <td><code>! ~ - + ++ -- typeof void delete</code></td>
+						  </tr>
+						  <tr>
+						   <td>multiplicação/divisão</td>
+						   <td><code>* / %</code></td>
+						  </tr>
+						  <tr>
+						   <td>adição/subtração</td>
+						   <td><code>+ -</code></td>
+						  </tr>
+						</table>
+					</section>
+					<section>
+						<h2>Precedência de operadores</h2>
+						<table class="standard-table">
+						<thead>
+							<tr>
+							<th scope="col">Tipo de operador</th>
+							<th scope="col">Operadores individuais</th>
+							</tr>
+						</thead>
+						<tbody>
+						  <tr>
+						   <td>deslocamento binário</td>
+						   <td><code>&lt;&lt; &gt;&gt; &gt;&gt;&gt;</code></td>
+						  </tr>
+						  <tr>
+						   <td>relacional</td>
+						   <td><code>&lt; &lt;= &gt; &gt;= in instanceof</code></td>
+						  </tr>
+						  <tr>
+						   <td>igualdade</td>
+						   <td><code>== != === !==</code></td>
+						  </tr>
+						  <tr>
+						   <td>and binário</td>
+						   <td><code>&amp;</code></td>
+						  </tr>
+						  <tr>
+						   <td>xor binário</td>
+						   <td><code>^</code></td>
+						  </tr>
+						  <tr>
+						   <td>or binário</td>
+						   <td><code>|</code></td>
+						  </tr>
+						</table>
+					</section>
+					<section>
+						<h2>Precedência de operadores</h2>
+						<table class="standard-table">
+						<thead>
+							<tr>
+							<th scope="col">Tipo de operador</th>
+							<th scope="col">Operadores individuais</th>
+							</tr>
+						</thead>
+						<tbody>
+						  <tr>
+						   <td>and lógico</td>
+						   <td><code>&amp;&amp;</code></td>
+						  </tr>
+						  <tr>
+						   <td>or lógico</td>
+						   <td><code>||</code></td>
+						  </tr>
+						  <tr>
+						   <td>condicional</td>
+						   <td><code>?:</code></td>
+						  </tr>
+						  <tr>
+						   <td>atribuição</td>
+						   <td><code>= += -= *= /= %= &lt;&lt;= &gt;&gt;= &gt;&gt;&gt;= &amp;= ^= |=</code></td>
+						  </tr>
+						  <tr>
+						   <td>vírgula</td>
+						   <td><code>,</code></td>
 						  </tr>
 						 </tbody>
 						</table>
