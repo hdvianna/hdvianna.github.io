@@ -935,6 +935,145 @@ console.log(teste); //Escreve undefined
 						</table>
 					</section>
 				</section>
+				<section>
+					<section>
+						<h2>Estruturas de controle e repetição</h2>
+					</section>
+					<section>
+						<h2>Bloco</h2>
+						<pre><code data-trim contenteditable>
+var vetor = [2,3,5,7,11];
+{
+  console.log(vetor[0]);
+  console.log(vetor[vetor.length - 1]);
+}
+						</code></pre>
+					</section>
+					<section>
+					<h2>Rótulos, continue e break</h2>
+						<pre><code data-trim contenteditable>
+bloco1: {
+  console.log("Bloco 1");
+  bloco2: {
+    console.log("Bloco 2");
+    break bloco1;
+  }
+  console.log("Fim bloco 1"); //Não será escrito
+}
+						</code></pre>
+					</section>
+					<section>
+					<h2>if .. else</h2>
+						<pre><code data-trim contenteditable>
+var numero = prompt("Digite um número");
+if (numero%2 === 0) {
+  alert(numero + " é par");
+} else {
+  alert(numero + " é ímpar");
+}
+						</code></pre>
+					</section>
+					<section>
+					<h2>switch/case</h2>
+						<pre><code data-trim contenteditable>
+var mes = prompt("Digite um mês");
+switch(mes.toLowerCase()) {
+  case "janeiro":
+  case "fevereiro":
+  case "março":
+    alert("Verão");
+    break;
+  case "abril":	case "maio": case "junho":
+    alert("Outono"); break;
+  case "julho":	case "agosto": case "setembro":
+    alert("Inverno");	break;
+  case "julho":	case "agosto": case "setembro":
+    alert("Primavera"); break;
+  default:
+    alert("Mês desconhecido"); break;
+}
+						</code></pre>
+					</section>
+					<section>
+					<h2>while</h2>
+						<pre><code data-trim contenteditable>
+//while(condição)
+var vetor = [2,3,5,7,11];
+var i = 0, len = vetor.length;
+while(i < len) {
+  console.log("vetor[", i, "] = ", vetor[i]);
+  i++;
+}
+</code></pre>
+					</section>
+					<section>
+					<h2>do while</h2>
+						<pre><code data-trim contenteditable>
+/**
+ * do {
+ *   instruções
+ * } while( condição )
+ */
+var vetor = [2,3,5,7,11];
+var i = 0, len = vetor.length;
+do {
+  console.log("vetor[", i, "] = ", vetor[i]);
+  i++;
+} while(i < len);
+</code></pre>
+					</section>
+					<section>
+					<h2>for</h2>
+						<pre><code data-trim contenteditable>
+//for (inicialização; condição; expressão)
+var vetor = [2,3,5,7,11];
+for(var i = 0, len = vetor.length; i < len; i++) {
+  console.log("vetor[", i, "] = ", vetor[i]);
+}
+</code></pre>
+					</section>
+					<section>
+					<h2>for in</h2>
+						<pre><code data-trim contenteditable>
+//for (atributo in objeto)
+var obj = {
+  "nome": "Gabriel",
+  "sobrenome": "Garcia Marquez"
+};
+for(var atributo in obj) {
+  console.log("obj.", atributo, " = ", obj[atributo]);
+}
+</code></pre>
+					</section>
+					<section>
+					<h2>Rótulos, continue e break</h2>
+						<pre><code data-trim contenteditable>
+var vetor = [2,3,5,7,11];
+var i = 0, len = vetor.length;
+repetir: //Isto é um rótulo (label)
+for(;;){
+  console.log(vetor[i]);
+  i++;
+  if (i < len) {
+    continue repetir;//continue: usado dentro de loops
+  }
+  //break: Sai de um switch, rótulo ou loop
+  break;
+}
+console.log("Fim, mas não use este código!");
+						</code></pre>
+					</section>
+					<section>
+					<h2>try/catch e throw</h2>
+						<pre><code data-trim contenteditable>
+try {
+  throw new Error("Isto é um objeto erro");
+} catch (error) {
+  console.log(error.message);
+}
+</code></pre>
+					</section>
+				</section>
 			</div>
 		</div>
 
