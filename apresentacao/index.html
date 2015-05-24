@@ -320,22 +320,21 @@ Comentário de múltiplas linhas
 */
 						</code></pre>
 					</section>
-				</section>
-				<section>
-					<h2>Variáveis</h2>
-					<ul>
-						<li>
-							Nomes de variáveis podem iniciar com os caracteres de A até Z
-							(e também a até z), _ (underscore) ou $ (dólar)
-						</li>
-						<li>
-							Tem escopo de função
-						</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Variáveis</h2>
-					<pre><code data-trim contenteditable>
+					<section>
+						<h2>Variáveis</h2>
+						<ul>
+							<li>
+								Nomes de variáveis podem iniciar com os caracteres de A até Z
+								(e também a até z), _ (underscore) ou $ (dólar)
+							</li>
+							<li>
+								Tem escopo de função
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Variáveis</h2>
+						<pre><code data-trim contenteditable>
 //Variável sem inicialização, o valor é igual a undefined
 var texto;
 var soma = 0;
@@ -345,21 +344,92 @@ var x=0,y=0,z=0;
 
 //Quando "var" não é utilizado o escopo da variável é global
 global = 1;
-
+						</code></pre>
+					</section>
+					<section>
+						<h2>Variáveis</h2>
+						<pre><code data-trim contenteditable>
 //Içamento de variável (hoisting)
 var hoisting = "hello";
 
 (function() {
-  console.log(hoisting); // exibirá undefined
-  var hoisting = "valor local";
+	console.log(hoisting); // exibirá undefined
+	var hoisting = "valor local";
 })();
-
-					</code></pre>
+						</code></pre>
+					</section>
 				</section>
-			</section>
-		</section>
+				<section>
+					<section>
+						<h2>Tipos de dados</h2>
+						<table>
+								<tr>
+									<th>Tipo</th>
+									<th>Descrição</th>
+								</tr>
+								<tr>
+									<td>Boolean</td>
+									<td>Entidade lógica de valores <code>true</code> ou <code>false</code></td>
+								</tr>
+								<tr>
+									<td>Null</td>
+									<td>Representa um valor vazio</td>
+								</tr>
+								<tr>
+									<td>Undefined</td>
+									<td>Representa um valor que não foi inicializada</td>
+								</tr>
+								<tr>
+									<td>Number</td>
+									<td>Ponto flutuante de precisão dupla. -(2<small>53</small> -1) and 2<small>53</small> -1</td>
+								</tr>
+								<tr>
+									<td>String</td>
+									<td>Cadeia de caracters que representa dados textuais</td>
+								</tr>
+								<tr>
+									<td>Object</td>
+									<td>Tipo que representa objetos em memória</td>
+								</tr>
+						</table>
+					</section>
+					<section>
+						<h2>Number</h2>
+						<pre><code data-trim contenteditable>
+console.log(undefined + 1);//Resulta na constante NaN
+console.log("" + 1);//Resulta na strintg "1"
+console.log(42/0);//Resulta na constante Infinity
+console.log(42/-0);//Resulta na constante -Infinity
+console.log(42/Infinity);//Resulta em 0
+console.log(Number.MIN_NUMBER); //Menor valor numérico permitido
+console.log(Number.MAX_NUMBER); //Maior valor numérico permitido
+						</code></pre>
+					</section>
+					<section>
+						<h2>String</h2>
+						<pre><code data-trim contenteditable>
+//Exibe "Hello Javascript"
+console.log("Hello".concat(" ").concat("Javascript"));
+console.log("Hello Javascript".length) //Exibe o valor 16
+console.log("Hello Javascript".substr(0, 5)) //Exibe "Hello"
+console.log("Hello Javascript"[6]) //Exibe "J"
+						</code></pre>
+					</section>
+					<section>
+						<h2>Object</h2>
+						<pre><code data-trim contenteditable>
+var hello = {
+  greeting: "Hello",
+  name: "Javascript",
+  greet: function() {
+    console.log(this.greeting.concat(" ").concat(this.name));
+  }
+}
+hello.greet();//Exibirá Hello Javascript
+						</code></pre>
+					</section>
+				</section>
 			</div>
-
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
