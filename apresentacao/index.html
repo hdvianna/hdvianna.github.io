@@ -1079,9 +1079,72 @@ try {
 </code></pre>
 					</section>
 				</section>
+				<section>
+					<section>
+						<h2>Arrays</h2>
+						<p>São objetos cujos itens são "propriedades" indexadas por inteiros</p>
+						<pre><code data-trim contenteditable>
+//Cria um vetor não populado com três itens
+var vetor = new Array(3);
+
+/*Cria um vetor com três itens utilizando o construtor 
+do objeto Array*/
+var diretores = new Array(
+  "Alfred Hitchcock", "Sergio Leone", "Stanley Kubrick"
+);
+
+//Cria um vetor com três itens  utilizando JSON
+var filmes = [
+  "Janela Indiscreta",
+  "Era uma vez no oeste", 
+  "2001: Uma odisséia no espaço"
+];
+</code></pre>
+					</section>
+					<section>
+						<h2>Arrays</h2>
+						<pre><code data-trim contenteditable>
+
+var vetor = new Array(3);
+console.log(vetor.length); // Escreve 3
+
+vetor[9] = "Alteração de length";
+console.log(vetor.length); //Escreve 10
+
+vetor.length = 1; //Diminui o tamanho do vetor
+console.log(vetor[9]); //Escreve undefined
+
+</code></pre>
+					</section>
+
+					<section>
+						<h2>Arrays</h2>
+						<pre><code data-trim contenteditable>
+
+/*
+ Cria um novo vetor, itens do vetor filmes
+ serão acrescentados ao fim do vetor diretores
+*/
+var resultado = diretores.concat(filmes); 
+
+/*
+ Resulta num novo vetor onde os valores 1954, 1968 e 1968
+ estarão ao final dos valores do vetor resultado
+*/
+console.log(resultado.concat(1954, 1968, 1968));
+
+
+</code></pre>
+					</section>
+				</section>
 			</div>
 		</div>
 
+<!--
+var dateRegEx = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/i;
+var dateParts = dateRegEx.exec('00/00/0000');
+console.log(dateParts)
+-->
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
