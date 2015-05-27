@@ -1103,6 +1103,7 @@ var filmes = [
 					</section>
 					<section>
 						<h2>Arrays</h2>
+						<h4>Array.prototype.length</h4>
 						<pre><code data-trim contenteditable>
 
 var vetor = new Array(3);
@@ -1119,6 +1120,7 @@ console.log(vetor[9]); //Escreve undefined
 
 					<section>
 						<h2>Arrays</h2>
+						<h4>Array.prototype.concat()</h4>
 						<pre><code data-trim contenteditable>
 
 /*
@@ -1131,12 +1133,89 @@ var resultado = diretores.concat(filmes);
  Resulta num novo vetor onde os valores 1954, 1968 e 1968
  estarão ao final dos valores do vetor resultado
 */
-console.log(resultado.concat(1954, 1968, 1968));
+resultado = resultado.concat(1954, 1968, 1968);
+console.log(resultado);
 
 
 </code></pre>
 					</section>
+					<section>
+						<h2>Arrays</h2>
+						<h4>Array.prototype.every()</h4>
+						<pre><code data-trim contenteditable>
+
+//Callback que testa se valor é numérico
+function isNumerico(valorAtual, indice, vetor) {
+  return typeof valorAtual  === "number";
+}
+
+//Escreve false
+console.log(resultado.every(isNumerico));
+
+//Escreve true
+console.log([1954,1968,1968].every(isNumerico));
+</code></pre>
+					</section>
+					<section>
+						<h2>Arrays</h2>
+						<h4>Array.prototype.filter()</h4>
+						<pre><code data-trim contenteditable>
+
+//Escreve 1954, 1968 e 1968
+console.log(resultado.filter(isNumerico));
+
+</code></pre>
+					</section>
+					<section>
+						<h2>Arrays</h2>
+						<h4>Array.prototype.foreach()</h4>
+						<pre><code data-trim contenteditable>
+resultado.forEach(
+  function(valorAtual, indice, vetor) {
+    if (isNumerico(valorAtual, indice, vetor)) {
+      console.log(""+valorAtual, "é numérico");
+    } else {
+      console.log(valorAtual, "não é numérico");
+    }
+  }
+);
+</code></pre>
+					</section>
+					<section>
+						<h2>Arrays</h2>
+						<h4>Array.prototype.indexOf()</h4>
+						<pre><code data-trim contenteditable>
+do {
+  var indice = resultado.indexOf(1968, indice + 1);
+  console.log(indice);
+} while(indice !== -1)
+
+</code></pre>
+					</section>
+					<section>
+						<h2>Arrays</h2>
+						<h4>Array.prototype.join()</h4>
+						<pre><code data-trim contenteditable>
+/*
+Escreve 
+Janela Indiscreta, Era uma vez no oeste, 2001: Uma odisséia no espaço
+*/
+console.log(diretores.join(", "));
+</code></pre>
+					</section>
+					<section>
+						<h2>Arrays</h2>
+						<h4>Array.prototype.lastIndexOf()</h4>
+						<pre><code data-trim contenteditable>
+var indice = resultado.length;
+do {
+  indice = resultado.lastIndexOf(1968, indice);
+  console.log(indice--);
+} while(indice > -1)
+
+</code></pre>
 				</section>
+			</section>
 			</div>
 		</div>
 
