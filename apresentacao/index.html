@@ -418,6 +418,10 @@ console.log("Hello".concat(" ").concat("Javascript"));
 console.log("Hello Javascript".length) //Exibe o valor 16
 console.log("Hello Javascript".substr(0, 5)) //Exibe "Hello"
 console.log("Hello Javascript"[6]) //Exibe "J"
+console.log("Hello Javascript".replace("Hello", "Olá")); //Exibe "Olá Javascript"
+console.log("Hello Javascript".split(" ")); //Exibe array ["Hello","Javascript"]
+console.log("Hello Javascript".toLowerCase()); //Exibe "hello javascript"
+console.log("Hello Javascript".toUpperCase()); //Exibe "HELLO JAVASCRIPT"
 						</code></pre>
                     </section>
                     <section>
@@ -1382,11 +1386,12 @@ console.log([
 </code></pre>
                     </section>
                 </section>
+                
                 <section>
-                  <section>
-                    <h2>Objetos</h2>
-                    <h4>Criando instâncias</h4>
-                    <pre><code data-trim contenteditable>
+                    <section>
+                        <h2>Objetos</h2>
+                        <h4>Criando instâncias</h4>
+                        <pre><code data-trim contenteditable>
 function Cao(nome) {
   this.nome = nome;
 }
@@ -1399,11 +1404,11 @@ caes[1] = {
 caes[2] = Object.create(caes[1]);
 caes[2].nome = "Cookie";
 </code></pre>
-                  </section>
-                  <section>
-                    <h2>Objetos</h2>
-                    <h4>Métodos</h4>
-                    <pre><code style="max-height: 90% !important" data-trim contenteditable>
+                    </section>
+                    <section>
+                        <h2>Objetos</h2>
+                        <h4>Métodos</h4>
+                        <pre><code style="max-height: 90% !important" data-trim contenteditable>
 function Cao(nome) {
   this.nome = nome;
   this.latir = function() {
@@ -1423,11 +1428,11 @@ caes.forEach(function(cao) {
   cao.latir();
 });
 </code></pre>
-                  </section>
-                  <section>
-                    <h2>Objetos</h2>
-                    <h4>Herança</h4>
-                    <pre><code style="max-height: 90% !important" data-trim contenteditable>
+                    </section>
+                    <section>
+                        <h2>Objetos</h2>
+                        <h4>Herança</h4>
+                        <pre><code style="max-height: 90% !important" data-trim contenteditable>
 function Animal(nome) {
   this.nome = nome;
 }
@@ -1450,11 +1455,11 @@ cao.comer();
 cao.beber();
 cao.latir();
 </code></pre>
-                  </section>
-                  <section>
-                    <h2>Objetos</h2>
-                    <h4>Herança</h4>
-                    <pre><code style="max-height: 90% !important" data-trim contenteditable>
+                    </section>
+                    <section>
+                        <h2>Objetos</h2>
+                        <h4>Herança</h4>
+                        <pre><code style="max-height: 90% !important" data-trim contenteditable>
 var prototipoAnimal = {
   "comer": function() {
     console.log(this.nome, " está comendo");
@@ -1473,7 +1478,7 @@ cao.comer();
 cao.beber();
 cao.latir();
 </code></pre>
-                  </section>
+                    </section>
                 </section>
             </div>
         </div>
