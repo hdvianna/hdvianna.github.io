@@ -1080,6 +1080,27 @@ try {
                     </section>
                 </section>
                 <section>
+                    <h2>function</h2>
+                    <pre><code data-trim contenteditable>
+function HelloWorld () {
+console.log("Hello World");
+}
+HelloWorld();
+
+var HelloWorld2 = function() {
+console.log("Hello World 2");
+}
+HelloWorld2();
+
+function Salut(name, greeting) {
+  console.log(arguments); //Imprime parâmetros como um "array"
+  console.log("Salut ".concat(name).concat(", ").concat(greeting));
+}
+Salut("javascript", "comment ça va?");
+
+</code></pre>
+                </section>
+                <section>
                     <section>
                         <h2>Arrays</h2>
                         <p>São objetos cujos itens são "propriedades" indexadas por inteiros</p>
@@ -1087,7 +1108,7 @@ try {
 //Cria um vetor não populado com três itens
 var vetor = new Array(3);
 
-/*Cria um vetor com três itens utilizando o construtor 
+/*Cria um vetor com três itens utilizando o construtor
 do objeto Array*/
 var diretores = new Array(
   "Alfred Hitchcock", "Sergio Leone", "Stanley Kubrick"
@@ -1096,7 +1117,7 @@ var diretores = new Array(
 //Cria um vetor com três itens  utilizando JSON
 var filmes = [
   "Janela Indiscreta",
-  "Era uma vez no oeste", 
+  "Era uma vez no oeste",
   "2001: Uma odisséia no espaço"
 ];
 </code></pre>
@@ -1127,7 +1148,7 @@ console.log(vetor[9]); //Escreve undefined
  Cria um novo vetor, itens do vetor filmes
  serão acrescentados ao fim do vetor diretores
 */
-var resultado = diretores.concat(filmes); 
+var resultado = diretores.concat(filmes);
 
 /*
  Resulta num novo vetor onde os valores 1954, 1968 e 1968
@@ -1201,7 +1222,7 @@ do {
                         <h4>Array.prototype.join()</h4>
                         <pre><code data-trim contenteditable>
 /*
-Escreve 
+Escreve
 Janela Indiscreta, Era uma vez no oeste, 2001: Uma odisséia no espaço
 */
 console.log(diretores.join(", "));
@@ -1242,7 +1263,7 @@ for(var i=0;i < 10; i++) {
 while(potencias.length) {
   var item = potencias.pop();
   console.log(item);
-} 
+}
 </code></pre>
                     </section>
                     <section>
@@ -1288,7 +1309,7 @@ while(vetor.length) {
     inverso.unshift(item);//Coloca o elemento no início
   }
 }
-console.log(inverso); 
+console.log(inverso);
 </code></pre>
                     </section>
                     <section>
@@ -1308,7 +1329,7 @@ console.log([1, 2, 3, 4, 5, 6, 7, 8, 9, 10].slice(3,-3));
 
 </code></pre>
                     </section>
-                              
+
                     <section>
                         <h2>Arrays</h2>
                         <h4>Array.prototype.sort()</h4>
@@ -1344,22 +1365,115 @@ console.log(vetor); //Imprime 1, 2, 3, 8, 9, 10
                     </section>
                     <section>
                         <h2>Arrays</h2>
-                        <h4>Array.prototype.toString() && Array.prototype.toLocaleString()</h4>
+                        <h4>Array.prototype.toString() & Array.prototype.toLocaleString()</h4>
                         <pre><code data-trim contenteditable>
 //Imprime String,Fri May 29 2015 21:00:00 GMT-0300 (BRT)
 console.log([
-  {"toString": function() { return "String"}}, 
+  {"toString": function() { return "String"}},
   new Date("2015-05-30")
 ].toString());
 
 //String localizada,29/05/2015 21:00:00
 console.log([
-  {"toLocaleString": function() { return "String localizada"}}, 
+  {"toLocaleString": function() { return "String localizada"}},
   new Date("2015-05-30")
 ].toLocaleString());
 
 </code></pre>
                     </section>
+                </section>
+                <section>
+                  <section>
+                    <h2>Objetos</h2>
+                    <h4>Criando instâncias</h4>
+                    <pre><code data-trim contenteditable>
+function Cao(nome) {
+  this.nome = nome;
+}
+var caes = [];
+caes[0] = new Cao("Mel");
+caes[1] = {
+  "nome": "Maisena"
+};
+//Cria objeto baseado em um protótipo
+caes[2] = Object.create(caes[1]);
+caes[2].nome = "Cookie";
+</code></pre>
+                  </section>
+                  <section>
+                    <h2>Objetos</h2>
+                    <h4>Métodos</h4>
+                    <pre><code style="max-height: 90% !important" data-trim contenteditable>
+function Cao(nome) {
+  this.nome = nome;
+  this.latir = function() {
+    console.log("Au");
+  }
+}
+var caes = [];
+caes[0] = new Cao("Mel");
+caes[1] = {
+  "nome": "Maisena",
+  "latir": function() {
+    console.log("Au");
+  }
+};
+caes.forEach(function(cao) {
+  console.log(cao.nome, ": ");
+  cao.latir();
+});
+</code></pre>
+                  </section>
+                  <section>
+                    <h2>Objetos</h2>
+                    <h4>Herança</h4>
+                    <pre><code style="max-height: 90% !important" data-trim contenteditable>
+function Animal(nome) {
+  this.nome = nome;
+}
+Animal.prototype.comer = function() {
+  console.log(this.nome, " está comendo");
+};
+Animal.prototype.beber = function() {
+  console.log(this.nome, " está bebendo");
+};
+function Cao(nome) {
+  Animal.call(this, nome);
+}
+Cao.prototype = new Animal;
+Cao.prototype.constructor = Cao;
+Cao.prototype.latir = function() {
+  console.log(this.nome, " está latindo");
+};
+var cao = new Cao("Maisena");
+cao.comer();
+cao.beber();
+cao.latir();
+</code></pre>
+                  </section>
+                  <section>
+                    <h2>Objetos</h2>
+                    <h4>Herança</h4>
+                    <pre><code style="max-height: 90% !important" data-trim contenteditable>
+var prototipoAnimal = {
+  "comer": function() {
+    console.log(this.nome, " está comendo");
+  },
+  "beber": function() {
+    console.log(this.nome, " está bebendo");
+  }
+};
+var prototipoCao = Object.create(prototipoAnimal);
+prototipoCao.latir = function() {
+  console.log(this.nome, " está latindo");
+};
+cao = Object.create(prototipoCao);
+cao.nome = "Maisena";
+cao.comer();
+cao.beber();
+cao.latir();
+</code></pre>
+                  </section>
                 </section>
             </div>
         </div>
