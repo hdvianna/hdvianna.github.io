@@ -1,0 +1,1611 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Introdução ao Javascript</title>
+
+        <meta name="description" content="Curso de introdução ao Javascript">
+        <meta name="author" content="Henrique Damasceno Vianna">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/timeline.css">
+        <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+                <section>
+                    <img src="img/logo.js.png" style="z-index: -2; position: fixed;
+                         max-width: 2000px!important; width: 763px;
+                         max-height: 2000px; top: -218px; left: calc(2000px/4);
+                         -webkit-filter: opacity(25%); filter: opacity(25%);">
+                    <h1>Javascript</h1>
+                    <h3>Introdução ao Javascript</h3>
+                    <p>
+                        <small>
+                            por Henrique Damasceno Vianna
+                        </small>
+                    </p>
+                </section>
+                <section data-background="img/logo.js.transparent.png">
+                    <section>
+                        <h2>Javascript?</h2>
+                        <p>
+                            Utilizado em diferentes plataformas
+                        </p>
+                        <ul>
+                            <li>Navegadores</li>
+                            <li>
+                                Server side script
+                                <ul>
+                                    <li>Node.js</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Internet of things (IoT)
+                                <ul>
+                                    <li>Espruino</li>
+                                    <li>Tessel</li>
+                                    <li>Johnny five framework</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Javascript?</h2>
+                        <ul>
+                            <li>
+                                Não é Java
+                                <ul>
+                                    <li>Sintaxe parecida</li>
+                                    <li>Tipagem fraca</li>
+                                    <li>Sem tipos estáticos</li>
+                                </ul>
+                            </li>
+                            <li>Também conhecido como ECMAScript</li>
+                            <li>Multiplataforma</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>
+                                Multiparadigma
+                                <ul>
+                                    <li>
+                                        Funções de primeira classe
+                                        <ul>
+                                            <li>Função é um tipo linguagem</li>
+                                            <li>
+                                                Orientado a objetos
+                                                <ul>
+                                                    <li>"Prototype-based", ao invés de "class based"<small>1</small></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Funcional
+                                            </li>
+                                            <li>
+                                                Imperativo
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <small>1 - A versão 6 do ECMAScript adiciona suporte a classes</small>
+                    </section>
+                </section>
+                <section data-background="img/hieroglyphs.transparent.jpg">
+                    <section>
+                        <h2>Histórico</h2>
+                        <ul>
+                            <li>
+                                1995
+                                <ul>
+                                    <li>
+                                        Mocha -&gt; Livescript -&gt; Javascript
+                                        <ul>
+                                            <li>após licença da Sun</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Criado em 10 dias por Brendan Eich
+                                    </li>
+                                    <li>
+                                        Parte do Netscape Navigator 2
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                1996
+                                <ul>
+                                    <li>
+                                        Enviado para padronização na ECMA
+                                    </li>
+                                    <li>
+                                        Parte do Internet Explorer 3
+                                        <ul>
+                                            <li>Não era 100% compatível com os scripts do Navigator</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Histórico</h2>
+                        <ul>
+                            <li>
+                                1997
+                                <ul>
+                                    <li>
+                                        Padrão ECMA-262
+                                    </li>
+                                    <li>
+                                        DHTML
+                                        <ul>
+                                            <li>
+                                                DOM + HTML + Javascript
+                                            </li>
+                                            <li>
+                                                Parte do Internet Explorer 4
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                1998
+                                <ul>
+                                    <li>
+                                        ECMAScript2
+                                    </li>
+                                    <li>
+                                        Criação da Mozilla Organization pela Netscape
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Histórico</h2>
+                        <ul>
+                            <li>
+                                1999
+                                <ul>
+                                    <li>ECMAScript 3</li>
+                                    <li>
+                                        Internet Explorer 5
+                                        <ul>
+                                            <li>
+                                                ActiveX.XMLHTTP
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>AOL adquire Netscape</li>
+                                </ul>
+                            </li>
+                            <li>
+                                2003
+                                <ul>
+                                    <li>
+                                        Criação da Mozilla Foundation
+                                        <ul>
+                                            <li>
+                                                Auxílio da AOL
+                                                <ul>
+                                                    <li>Transferência de hardware e propriedade intelectual</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Histórico</h2>
+                        <ul>
+                            <li>
+                                2004
+                                <ul>
+                                    <li>
+                                        Firefox 1.0
+                                        <ul>
+                                            <li>Antigo Phoenix (2002), baseado no Netscape Navigator</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                2005
+                                <ul>
+                                    <li>
+                                        AJAX
+                                        <ul>
+                                            <li>Ajax: A new Approach to Web Applications</li>
+                                            <li>Jesse James Garrett</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Prototype
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Histórico</h2>
+                        <ul>
+                            <li>
+                                2006
+                                <ul>
+                                    <li>JQuery</li>
+                                    <li>YUI</li>
+                                    <li>Mootools</li>
+                                    <li>Firebug</li>
+                                </ul>
+                            </li>
+                            <li>
+                                2008
+                                <ul>
+                                    <li>Acordo Harmony</li>
+                                </ul>
+                            </li>
+                            <li>
+                                2009
+                                <ul>
+                                    <li>ECMA 3.1 -&gt; ECMA 5</li>
+                                    <li>Node.js</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Histórico</h2>
+                        <ul>
+                            <li>
+                                2015
+                                <ul>
+                                    <li>ECMA 2015 -&gt; ECMA 6</li>
+                                    <li>Node.js</li>
+                                </ul>
+                            </li>
+                            <li>...</li>
+                            <li>A partir de 2015 cada ano possui uma nova versão. Atualmente estamos na 13a edição (ECMAScript 2022).</li>
+                            <li><em>ES.Next</em> é a referência de funcionalidades para a próxima versão.</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Sintaxe</h2>
+                        <ul>
+                            <li>Sensível ao caso</li>
+                            <li>Unicode</li>
+                            <li>Instruções (statements) separadas por "<code>;</code>"</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Comentários</h2>
+                        <pre><code data-trim contenteditable>
+//Comentário de uma linha
+
+/*
+Comentário de múltiplas linhas
+
+[Fim] =)
+*/
+						</code></pre>
+                    </section>
+                    <section>
+                        <h2>Variáveis</h2>
+                        <ul>
+                            <li>
+                                Nomes de variáveis podem iniciar com os caracteres de A até Z
+                                (e também a até z), _ (underscore) ou $ (dólar)
+                            </li>
+                            <li>
+                                Podem ter diferentes escopos léxicos (dependerá de como é definida)
+                                <ul>
+                                    <li>var tem escopo de função</li>
+                                    <li>const e let tem escopo de bloco</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Variáveis</h2>
+                        <pre><code data-trim contenteditable>
+//Variável sem inicialização, o valor é igual a undefined
+var texto;
+var soma = 0;
+
+//É possível declarar múltiplas variáveis numa linha
+var x=0,y=0,z=0;
+
+//Quando "var" não é utilizado o escopo da variável é global
+global = 1;
+
+//É possível definir que uma variável não pode ser alterada
+const imutavel = 10;
+
+// Um erro será lançado em caso de reatribuição
+imutavel = 2
+
+						</code></pre>
+                    </section>
+                    <section>
+                        <h2>Variáveis</h2>
+                        <pre><code data-trim contenteditable>
+//Içamento de variável (hoisting)
+var hoisting = "hello";
+
+(function() {
+    console.log(hoisting); // exibirá undefined
+    if (true) {
+        var hoisting = "valor local";
+    }
+    console.log(hoisting); // exibirá valor local
+})();
+						</code></pre>
+                    </section>
+                    <section>
+                        <h2>Variáveis</h2>
+                        <pre><code data-trim contenteditable>
+//let define que a variável tem escopo do bloco
+var hoisting = "hello";
+
+(function() {
+    console.log(hoisting); // exibirá hello
+    if (true) {
+        let hoisting = "valor do bloco";
+        console.log(hoisting); // exibirá valor do bloco
+    }
+    console.log(hoisting); // exibirá hello
+})();
+						</code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Tipos de dados</h2>
+                        <table>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Descrição</th>
+                            </tr>
+                            <tr>
+                                <td>Boolean</td>
+                                <td>Entidade lógica de valores <code>true</code> ou <code>false</code></td>
+                            </tr>
+                            <tr>
+                                <td>Null</td>
+                                <td>Representa um valor vazio</td>
+                            </tr>
+                            <tr>
+                                <td>Undefined</td>
+                                <td>Representa um valor que não foi inicializada</td>
+                            </tr>
+                            <tr>
+                                <td>Number</td>
+                                <td>Ponto flutuante de precisão dupla. -(2<small>53</small> -1) and 2<small>53</small> -1</td>
+                            </tr>
+                            <tr>
+                                <td>String</td>
+                                <td>Cadeia de caracters que representa dados textuais</td>
+                            </tr>
+                            <tr>
+                                <td>Object</td>
+                                <td>Tipo que representa objetos em memória</td>
+                            </tr>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Number</h2>
+                        <pre><code data-trim contenteditable>
+console.log(undefined + 1);//Resulta na constante NaN
+console.log("" + 1);//Resulta na strintg "1"
+console.log(42/0);//Resulta na constante Infinity
+console.log(42/-0);//Resulta na constante -Infinity
+console.log(42/Infinity);//Resulta em 0
+console.log(Number.MIN_NUMBER); //Menor valor numérico permitido
+console.log(Number.MAX_NUMBER); //Maior valor numérico permitido
+						</code></pre>
+                    </section>
+                    <section>
+                        <h2>String</h2>
+                        <pre><code data-trim contenteditable>
+//Exibe "Hello Javascript"
+console.log("Hello".concat(" ").concat("Javascript"));
+console.log("Hello Javascript".length) //Exibe o valor 16
+console.log("Hello Javascript".substr(0, 5)) //Exibe "Hello"
+console.log("Hello Javascript"[6]) //Exibe "J"
+//Exibe "Olá Javascript"
+console.log("Hello Javascript".replace("Hello", "Olá"));
+//Exibe array ["Hello","Javascript"]
+console.log("Hello Javascript".split(" "));
+//Exibe "hello javascript"
+console.log("Hello Javascript".toLowerCase());
+//Exibe "HELLO JAVASCRIPT"
+console.log("Hello Javascript".toUpperCase());
+						</code></pre>
+                    </section>
+                    <section>
+                        <h2>Object</h2>
+                        <pre><code data-trim contenteditable>
+var hello = {
+  greeting: "Hello",
+  name: "Javascript",
+  greet: function() {
+    console.log(this.greeting.concat(" ").concat(this.name));
+  }
+}
+hello.greet();//Exibirá Hello Javascript
+						</code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Operadores de atribuição</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Uso</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Atribuição</td>
+                                    <td><code>x = y</code></td>
+                                    <td><code>x = y</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Atribuição com adição</td>
+                                    <td><code>x += y</code></td>
+                                    <td><code>x = x + y</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Atribuição com subtração</td>
+                                    <td><code>x -= y</code></td>
+                                    <td><code>x = x - y</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Atribuição com multiplicação</td>
+                                    <td><code>x *= y</code></td>
+                                    <td><code>x = x * y</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Atribuição com divisão</td>
+                                    <td><code>x /= y</code></td>
+                                    <td><code>x = x / y</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Operadores de atribuição</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Uso</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Atribuição com resto da divisão</td>
+                                    <td><code>x&nbsp;%= y</code></td>
+                                    <td><code>x = x&nbsp;% y</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Atribuição com deslocamento à esquerda</td>
+                                    <td><code>x &lt;&lt;= y</code></td>
+                                    <td><code>x = x &lt;&lt; y</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Atribuição com deslocamento à direita</td>
+                                    <td><code>x &gt;&gt;= y</code></td>
+                                    <td><code>x = x &gt;&gt; y</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Atribuição com deslocamento à direita sem sinal</td>
+                                    <td><code>x &gt;&gt;&gt;= y</code></td>
+                                    <td><code>x = x &gt;&gt;&gt; y</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Operadores de atribuição</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Uso</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <td>Atribuição com AND binário</td>
+                            <td><code>x &amp;= y</code></td>
+                            <td><code>x = x &amp; y</code></td>
+                            </tr>
+                            <tr>
+                                <td>Atribuição com XOR binário</td>
+                                <td><code>x ^= y</code></td>
+                                <td><code>x = x ^ y</code></td>
+                            </tr>
+                            <tr>
+                                <td>Atribuição com OR binário</td>
+                                <td><code>x |= y</code></td>
+                                <td><code>x = x | y</code></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Operadores de comparação</h2>
+                        <table class="standard-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Operador</th>
+                                    <th scope="col">Exemplo retornando true</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Igualdade (<code>==</code>)</td>
+                                    <td><code>3 == var3</code>
+                                        <p><code>"3" == var3</code></p>
+                                        <code>3 == '3'</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Diferente (<code>!=</code>)</td>
+                                    <td><code>var1 != 4<br>
+                                            var2 != "3"</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Igualdade estrita (<code>===</code>)</td>
+                                    <td><code>3 === var3</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Diferente estrito(<code>!==</code>)</td>
+                                    <td><code>var3 !== "3"<br>
+                                            3 !== '3'</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Operadores de comparação</h2>
+                        <table class="standard-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Operador</th>
+                                    <th scope="col">Exemplo retornando true</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Maior que (<code>&gt;</code>)</td>
+                                    <td><code>var2 &gt; var1<br>
+                                            "12" &gt; 2</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Maior ou igual (<code>&gt;=</code>)</td>
+                                    <td><code>var2 &gt;= var1<br>
+                                            var3 &gt;= 1</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Menor que (<code>&lt;</code>)</td>
+                                    <td><code>var1 &lt; var2<br>
+                                            "2" &lt; 12</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Menor ou igual (<code>&lt;=</code>)</td>
+                                    <td><code>var1 &lt;= var2<br>
+                                            var2 &lt;= 5</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Operadores aritméticos</h2>
+                        <table class="fullwidth-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Operador</th>
+                                    <th scope="col">Exemplo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Resto (<code>%</code>)</td>
+                                    <td>12 % 5 retorna 2</td>
+                                </tr>
+                                <tr>
+                                    <td>Incremento (<code>++</code>)</td>
+                                    <td>Sendo <code>x</code> = 3, então <code>++x</code> atribui 4 em <code>x</code> e retorna 4; <code>x++</code> retorna 3 e atribui 4</td>
+                                </tr>
+                                <tr>
+                                    <td>Decremento (<code>--</code>)</td>
+                                    <td>Sendo <code>x</code> = 3, então <code>--x</code> atribui 2 em <code>x</code> e retorna 2; <code>x--</code> retorna 3 e atribui 2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Operadores aritméticos</h2>
+                        <table class="fullwidth-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Operador</th>
+                                    <th scope="col">Exemplo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Negação unária e subtração (<code>-</code>)</td>
+                                    <td>Sendo <code>x</code> = 3, então <code>-x</code> retorna -3.</td>
+                                </tr>
+                                <tr>
+                                    <td>Adição e concatenação (<code>+</code>)</td>
+                                    <td>Converte para número: <code>+"3"</code> retorna <code>3</code>.<br>
+                                        <code>+true</code> retorna <code>1.</code><br><code>"1" + 1</code>,
+                                        retorna "11"</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Operadores binários</h2>
+                        <table class="standard-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Operador</th>
+                                    <th scope="col">Exemplo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>AND binário</td>
+                                    <td><code>a &amp; b</code></td>
+                                </tr>
+                                <tr>
+                                    <td>OR binário</td>
+                                    <td><code>a | b</code></td>
+                                </tr>
+                                <tr>
+                                    <td>XOR binário</td>
+                                    <td><code>a ^ b</code></td>
+                                </tr>
+                                <tr>
+                                    <td>NOT binário</td>
+                                    <td><code>~ a</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Deslocamento à esquerda</td>
+                                    <td><code>a &lt;&lt; b</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Deslocamento à direita</td>
+                                    <td><code>a &gt;&gt; b</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Deslocamento à direita com preenchimeto de zero</td>
+                                    <td><code>a &gt;&gt;&gt; b</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Operadores lógicos</h2>
+                        <table class="fullwidth-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Operador</th>
+                                    <th scope="col">Exemplo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>E lógico(<code>&amp;&amp;</code>)</td>
+                                    <td><code>expr1 &amp;&amp; expr2</code></td>
+                                </tr>
+                                <tr>
+                                    <td>OU lógico(<code>||</code>)</td>
+                                    <td><code>expr1 || expr2</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Negação lógica(<code>!</code>)</td>
+                                    <td><code>!expr</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Operador ternário</h2>
+                        <pre><code data-trim contenteditable>
+//condição ? retorno se condição for verdadeira : 
+//retorno se for falsa
+var a = 1, b = 2;
+var max = a > b ? a : b;
+						</code></pre>
+                    </section>
+                    <section>
+                        <h2>Membros</h2>
+                        <pre><code data-trim contenteditable>
+/**
+ * . ou []: Usados para acessar membros de um objeto ou vetor
+ */
+var vetor = [1,2,3];
+console.log(vetor[0]); //Escreve 1
+var obj = {
+  "nome": "José",
+  "sobrenome": "Saramago"
+};
+console.log(obj["nome"]); //Escreve "José"
+console.log(obj.sobrenome); //Escreve "Saramago"
+						</code></pre>
+                    </section>
+                    <section>
+                        <h2>in</h2>
+                        <pre><code data-trim contenteditable>
+/**
+ * in: Retorna true se o índice existe na coleção
+ */
+console.log(0 in vetor); //Escreve true
+console.log(3 in vetor); //Escreve false
+console.log("nome" in obj); //Escreve true
+						</code></pre>
+                    </section>
+                    <section>
+                        <h2>new e this</h2>
+                        <pre><code data-trim contenteditable>
+/**
+ * new: Constrói um objeto a partir de uma função
+ * this: Referência ao objeto atual
+ */
+function Cao () {
+  this.latir = function() {
+    console.log("Au");
+  }
+}
+var maizena = new Cao();
+maizena.latir();
+						</code></pre>
+                    </section>
+                    <section>
+                        <h2>delete</h2>
+                        <pre><code data-trim contenteditable>
+/**
+ * delete: Exclui um objeto, um atributo de um objeto,
+ *         ou item de um vetor
+ */
+delete obj.nome;
+console.log(obj.nome);//Escreve undefined
+
+delete obj;
+console.log(obj.sobrenome);//Lança uma exceção
+
+var vetor = ["a", "e", "i", "o", "u"];
+delete vetor[2];
+console.log(vetor);//Resultado pode diferir entre navegadores
+
+						</code></pre>
+                    </section>
+                    <section>
+                        <h2>typeof</h2>
+                        <pre><code data-trim contenteditable>
+/**
+ * typeof: Retorna uma string do tipo não avaliado do operando.
+ *         Os valores possíveis são: "function", "string", "number",
+ *         "object" ou "undefined"
+ */
+console.log(typeof (function(){})); //escreve "function"
+console.log(typeof "Hello world"); //escreve "string"
+console.log(typeof 1); //escreve "number"
+console.log(typeof {}); //escreve "object"
+console.log(typeof undefined); //escreve "undefined"
+						</code></pre>
+                    </section>
+                    <section>
+                        <h2>instanceof</h2>
+                        <pre><code data-trim contenteditable>
+/**
+ * instanceof: Retorna true se o objeto é uma instância da função
+ *             requisitada
+ */
+var agora = new Date();
+console.log(agora instanceof Date); //Escreve true
+console.log(agora instanceof Object); //Escreve true
+console.log(agora instanceof Array); //Escreve false
+var vetor = [];
+console.log(vetor instanceof Date); //Escreve false
+console.log(vetor instanceof Object); //Escreve true
+console.log(vetor instanceof Array); //Escreve true
+
+console.log(typeof Date);//Escreve "function"
+console.log(typeof Object);//Escreve "function"
+console.log(typeof Array);//Escreve "function"
+
+						</code></pre>
+                    </section>
+                    <section>
+                        <h2>void</h2>
+                        <pre><code data-trim contenteditable>
+/**
+* void: Executa a expressão, mas não retorna valor
+*/
+function voidtest() {
+  console.log("Teste void!");
+  return "teste";
+}
+var teste = void(voidtest()); //Escreve "Teste void!"
+console.log(teste); //Escreve undefined
+
+						</code></pre>
+                    </section>
+                    <section>
+                        <h2>Precedência de operadores</h2>
+                        <table class="standard-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Tipo de operador</th>
+                                    <th scope="col">Operadores individuais</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>membro</td>
+                                    <td><code>. []</code></td>
+                                </tr>
+                                <tr>
+                                    <td>chamada / criação</td>
+                                    <td><code>() new</code></td>
+                                </tr>
+                                <tr>
+                                    <td>negação/incremento</td>
+                                    <td><code>! ~ - + ++ -- typeof void delete</code></td>
+                                </tr>
+                                <tr>
+                                    <td>multiplicação/divisão</td>
+                                    <td><code>* / %</code></td>
+                                </tr>
+                                <tr>
+                                    <td>adição/subtração</td>
+                                    <td><code>+ -</code></td>
+                                </tr>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Precedência de operadores</h2>
+                        <table class="standard-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Tipo de operador</th>
+                                    <th scope="col">Operadores individuais</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>deslocamento binário</td>
+                                    <td><code>&lt;&lt; &gt;&gt; &gt;&gt;&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td>relacional</td>
+                                    <td><code>&lt; &lt;= &gt; &gt;= in instanceof</code></td>
+                                </tr>
+                                <tr>
+                                    <td>igualdade</td>
+                                    <td><code>== != === !==</code></td>
+                                </tr>
+                                <tr>
+                                    <td>and binário</td>
+                                    <td><code>&amp;</code></td>
+                                </tr>
+                                <tr>
+                                    <td>xor binário</td>
+                                    <td><code>^</code></td>
+                                </tr>
+                                <tr>
+                                    <td>or binário</td>
+                                    <td><code>|</code></td>
+                                </tr>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Precedência de operadores</h2>
+                        <table class="standard-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Tipo de operador</th>
+                                    <th scope="col">Operadores individuais</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>and lógico</td>
+                                    <td><code>&amp;&amp;</code></td>
+                                </tr>
+                                <tr>
+                                    <td>or lógico</td>
+                                    <td><code>||</code></td>
+                                </tr>
+                                <tr>
+                                    <td>condicional</td>
+                                    <td><code>?:</code></td>
+                                </tr>
+                                <tr>
+                                    <td>atribuição</td>
+                                    <td><code>= += -= *= /= %= &lt;&lt;= &gt;&gt;= &gt;&gt;&gt;= &amp;= ^= |=</code></td>
+                                </tr>
+                                <tr>
+                                    <td>vírgula</td>
+                                    <td><code>,</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Estruturas de controle e repetição</h2>
+                    </section>
+                    <section>
+                        <h2>Bloco</h2>
+                        <pre><code data-trim contenteditable>
+var vetor = [2,3,5,7,11];
+{
+  console.log(vetor[0]);
+  console.log(vetor[vetor.length - 1]);
+}
+						</code></pre>
+                    </section>
+                    <section>
+                        <h2>Rótulos, continue e break</h2>
+                        <pre><code data-trim contenteditable>
+bloco1: {
+  console.log("Bloco 1");
+  bloco2: {
+    console.log("Bloco 2");
+    break bloco1;
+  }
+  console.log("Fim bloco 1"); //Não será escrito
+}
+						</code></pre>
+                    </section>
+                    <section>
+                        <h2>if .. else</h2>
+                        <pre><code data-trim contenteditable>
+var numero = prompt("Digite um número");
+if (numero%2 === 0) {
+  alert(numero + " é par");
+} else {
+  alert(numero + " é ímpar");
+}
+						</code></pre>
+                    </section>
+                    <section>
+                        <h2>switch/case</h2>
+                        <pre><code data-trim contenteditable>
+var mes = prompt("Digite um mês");
+switch(mes.toLowerCase()) {
+  case "janeiro":
+  case "fevereiro":
+  case "março":
+    alert("Verão");
+    break;
+  case "abril":	case "maio": case "junho":
+    alert("Outono"); break;
+  case "julho":	case "agosto": case "setembro":
+    alert("Inverno");	break;
+  case "julho":	case "agosto": case "setembro":
+    alert("Primavera"); break;
+  default:
+    alert("Mês desconhecido"); break;
+}
+						</code></pre>
+                    </section>
+                    <section>
+                        <h2>while</h2>
+                        <pre><code data-trim contenteditable>
+//while(condição)
+var vetor = [2,3,5,7,11];
+var i = 0, len = vetor.length;
+while(i < len) {
+  console.log("vetor[", i, "] = ", vetor[i]);
+  i++;
+}
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>do while</h2>
+                        <pre><code data-trim contenteditable>
+/**
+ * do {
+ *   instruções
+ * } while( condição )
+ */
+var vetor = [2,3,5,7,11];
+var i = 0, len = vetor.length;
+do {
+  console.log("vetor[", i, "] = ", vetor[i]);
+  i++;
+} while(i < len);
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>for</h2>
+                        <pre><code data-trim contenteditable>
+//for (inicialização; condição; expressão)
+var vetor = [2,3,5,7,11];
+for(var i = 0, len = vetor.length; i < len; i++) {
+  console.log("vetor[", i, "] = ", vetor[i]);
+}
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>for in</h2>
+                        <pre><code data-trim contenteditable>
+//for (atributo in objeto)
+var obj = {
+  "nome": "Gabriel",
+  "sobrenome": "Garcia Marquez"
+};
+for(var atributo in obj) {
+  console.log("obj.", atributo, " = ", obj[atributo]);
+}
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>for of</h2>
+                        <pre><code data-trim contenteditable>
+//for (elemento of vetor)
+var livros = [  
+                "Crônica de uma Morte Anunciada", 
+                "Cem Anos de Solidão", 
+                "A Revoada"
+            ];
+for(var livro of livros) {
+  console.log(livro);
+}
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Rótulos, continue e break</h2>
+                        <pre><code data-trim contenteditable>
+var vetor = [2,3,5,7,11];
+var i = 0, len = vetor.length;
+repetir: //Isto é um rótulo (label)
+for(;;){
+  console.log(vetor[i]);
+  i++;
+  if (i < len) {
+    continue repetir;//continue: usado dentro de loops
+  }
+  //break: Sai de um switch, rótulo ou loop
+  break;
+}
+console.log("Fim, mas não use este código!");
+						</code></pre>
+                    </section>
+                    <section>
+                        <h2>try/catch e throw</h2>
+                        <pre><code data-trim contenteditable>
+try {
+  throw new Error("Isto é um objeto erro");
+} catch (error) {
+  console.log(error.message);
+}
+</code></pre>
+                    </section>
+                </section>
+                <section>
+                    <h2>function</h2>
+                    <pre><code data-trim contenteditable>
+function HelloWorld () {
+  console.log("Hello World");
+}
+HelloWorld();
+
+var HelloWorld2 = function() {
+  console.log("Hello World 2");
+}
+HelloWorld2();
+
+function Salut(name, greeting) {
+  console.log(arguments); //Imprime parâmetros como um "array"
+  console.log("Salut ".concat(name).concat(", ").concat(greeting));
+}
+Salut("javascript", "comment ça va?");
+
+</code></pre>
+                </section>
+                <section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <p>São objetos cujos itens são "propriedades" indexadas por inteiros</p>
+                        <pre><code data-trim contenteditable>
+//Cria um vetor não populado com três itens
+var vetor = new Array(3);
+
+/*Cria um vetor com três itens utilizando o construtor
+do objeto Array*/
+var diretores = new Array(
+  "Alfred Hitchcock", "Sergio Leone", "Stanley Kubrick"
+);
+
+//Cria um vetor com três itens  utilizando JSON
+var filmes = [
+  "Janela Indiscreta",
+  "Era uma vez no oeste",
+  "2001: Uma odisséia no espaço"
+];
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.length</h4>
+                        <pre><code data-trim contenteditable>
+
+var vetor = new Array(3);
+console.log(vetor.length); // Escreve 3
+
+vetor[9] = "Alteração de length";
+console.log(vetor.length); //Escreve 10
+
+vetor.length = 1; //Diminui o tamanho do vetor
+console.log(vetor[9]); //Escreve undefined
+
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.concat()</h4>
+                        <pre><code data-trim contenteditable>
+
+/*
+ Cria um novo vetor, itens do vetor filmes
+ serão acrescentados ao fim do vetor diretores
+*/
+var resultado = diretores.concat(filmes);
+
+/*
+ Resulta num novo vetor onde os valores 1954, 1968 e 1968
+ estarão ao final dos valores do vetor resultado
+*/
+resultado = resultado.concat(1954, 1968, 1968);
+console.log(resultado);
+
+
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.every() & Array.prototype.some()</h4>
+                        <pre><code data-trim contenteditable>
+
+//Callback que testa se valor é numérico
+function isNumerico(valorAtual, indice, vetor) {
+  return typeof valorAtual  === "number";
+}
+
+//Escreve false
+console.log(resultado.every(isNumerico));
+
+//Escreve true
+console.log([1954,1968,1968].every(isNumerico));
+
+
+//Escreve true
+console.log(resultado.some(isNumerico));
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.fill()</h4>
+                        <pre><code data-trim contenteditable>
+
+let cores = ["#ff0000","#00ff00","#0000ff"];
+
+// Escreve "#dddddd", "#dddddd", "#dddddd"
+console.log(cores.fill("#dddddd"));
+
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.filter()</h4>
+                        <pre><code data-trim contenteditable>
+
+//Escreve 1954, 1968 e 1968
+console.log(resultado.filter(isNumerico));
+
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.find()</h4>
+                        <pre><code data-trim contenteditable>
+
+let copas = [1958,1962,1970,1994,2002];
+//Escreve 1994
+console.log(copas.find(ano => ano > 1970 ));
+
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.foreach()</h4>
+                        <pre><code data-trim contenteditable>
+resultado.forEach(
+  function(valorAtual, indice, vetor) {
+    if (isNumerico(valorAtual, indice, vetor)) {
+      console.log(""+valorAtual, "é numérico");
+    } else {
+      console.log(valorAtual, "não é numérico");
+    }
+  }
+);
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.indexOf()</h4>
+                        <pre><code data-trim contenteditable>
+do {
+  var indice = resultado.indexOf(1968, indice + 1);
+  console.log(indice);
+} while(indice !== -1)
+
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.join()</h4>
+                        <pre><code data-trim contenteditable>
+/*
+Escreve
+Janela Indiscreta, Era uma vez no oeste, 2001: Uma odisséia no espaço
+*/
+console.log(diretores.join(", "));
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.lastIndexOf()</h4>
+                        <pre><code data-trim contenteditable>
+var indice = resultado.length;
+do {
+  indice = resultado.lastIndexOf(1968, indice);
+  console.log(indice--);
+} while(indice > -1)
+
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.map()</h4>
+                        <pre><code data-trim contenteditable>
+[1,4,9,16,25,36,49,64,81,100].map(
+  function(valorAtual, indice, vetor) {
+    return Math.sqrt(valorAtual);
+  }
+);
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.push() & Array.prototype.pop()</h4>
+                        <pre><code data-trim contenteditable>
+var potencias = [];
+for(var i=0;i < 10; i++) {
+  potencias.push(Math.pow(i+1,2));
+}
+
+while(potencias.length) {
+  var item = potencias.pop();
+  console.log(item);
+}
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.reduce() & Array.prototype.reduceRight()</h4>
+                        <pre><code data-trim contenteditable>
+
+var vetor = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+//Somatório dos números de 1 a 10
+var somatorio = vetor.reduce(
+  function(valorAnterior, valorAtual, indice, array) {
+    return valorAnterior + valorAtual;
+  }
+);
+
+//Somatório dos números de 10 a 1 (resultado é o mesmo)
+var media = vetor.reduceRight(
+  function(valorAnterior, valorAtual, indice, array) {
+    return valorAnterior + valorAtual;
+  }
+)/vetor.length;
+
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.reverse()</h4>
+                        <pre><code data-trim contenteditable>
+console.log("arara".split("").reverse().join("")); //Escreve arara
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.shift() & Array.prototype.unshift()</h4>
+                        <pre><code data-trim contenteditable>
+var vetor = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var inverso = [];
+while(vetor.length) {
+  var item = vetor.shift();//Remove o elemento inicial
+  if (item !== undefined) {
+    console.log(item);//Imprime o elemento removido
+    inverso.unshift(item);//Coloca o elemento no início
+  }
+}
+console.log(inverso);
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.slice()</h4>
+                        <pre><code data-trim contenteditable>
+/*
+ slice(indice_inicial, indice_final (não incluído))
+ Imprime 4, 5, 6, 7
+*/
+console.log([1, 2, 3, 4, 5, 6, 7, 8, 9, 10].slice(3,7));
+
+/*
+ Imprime 4, 5, 6, 7
+*/
+console.log([1, 2, 3, 4, 5, 6, 7, 8, 9, 10].slice(3,-3));
+
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.sort()</h4>
+                        <pre><code data-trim contenteditable>
+
+//Gera um vetor com valores aleatórios
+var vetor = [0,0,0,0,0,0,0,0,0,0].map(function() {
+    return Number.parseInt(Math.random() *  10) + 1;
+});
+//Ordena o vetor em ordem crescente
+console.log(vetor.sort());
+//Ordena o vetor em ordem decrescente
+console.log(vetor.sort(
+ function(a,b) {
+   if (b > a) {
+     return 1;
+   } else {
+     return -1;
+   }
+ }));
+
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.splice()</h4>
+                        <pre><code data-trim contenteditable>
+var vetor = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var removidos = vetor.splice(3,4);
+console.log(removidos); //Imprime 4, 5, 6, 7
+console.log(vetor); //Imprime 1, 2, 3, 8, 9, 10
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <h4>Array.prototype.toString() & Array.prototype.toLocaleString()</h4>
+                        <pre><code data-trim contenteditable>
+//Imprime String,Fri May 29 2015 21:00:00 GMT-0300 (BRT)
+console.log([
+  {"toString": function() { return "String"}},
+  new Date("2015-05-30")
+].toString());
+
+//String localizada,29/05/2015 21:00:00
+console.log([
+  {"toLocaleString": function() { return "String localizada"}},
+  new Date("2015-05-30")
+].toLocaleString());
+
+</code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Objetos</h2>
+                        <h4>Criando instâncias</h4>
+                        <pre><code data-trim contenteditable>
+function Cao(nome) {
+  this.nome = nome;
+}
+var caes = [];
+caes[0] = new Cao("Mel");
+caes[1] = {
+  "nome": "Maisena"
+};
+//Cria objeto baseado em um protótipo
+caes[2] = Object.create(caes[1]);
+caes[2].nome = "Cookie";
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Objetos</h2>
+                        <h4>Métodos</h4>
+                        <pre><code style="max-height: 90% !important" data-trim contenteditable>
+function Cao(nome) {
+  this.nome = nome;
+  this.latir = function() {
+    console.log("Au");
+  }
+}
+var caes = [];
+caes[0] = new Cao("Mel");
+caes[1] = {
+  "nome": "Maisena",
+  "latir": function() {
+    console.log("Au");
+  }
+};
+caes.forEach(function(cao) {
+  console.log(cao.nome, ": ");
+  cao.latir();
+});
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Objetos</h2>
+                        <h4>Herança ("Old School")</h4>
+                        <pre><code style="max-height: 90% !important" data-trim contenteditable>
+function Animal(nome) {
+  this.nome = nome;
+}
+Animal.prototype.comer = function() {
+  console.log(this.nome, " está comendo");
+};
+Animal.prototype.beber = function() {
+  console.log(this.nome, " está bebendo");
+};
+function Cao(nome) {
+  Animal.call(this, nome);
+}
+Cao.prototype = new Animal;
+Cao.prototype.constructor = Cao;
+Cao.prototype.latir = function() {
+  console.log(this.nome, " está latindo");
+};
+var cao = new Cao("Maisena");
+cao.comer();
+cao.beber();
+cao.latir();
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Objetos</h2>
+                        <h4>Herança ("Old School")</h4>
+                        <pre><code style="max-height: 90% !important" data-trim contenteditable>
+var prototipoAnimal = {
+  "comer": function() {
+    console.log(this.nome, " está comendo");
+  },
+  "beber": function() {
+    console.log(this.nome, " está bebendo");
+  }
+};
+var prototipoCao = Object.create(prototipoAnimal);
+prototipoCao.latir = function() {
+  console.log(this.nome, " está latindo");
+};
+cao = Object.create(prototipoCao);
+cao.nome = "Maisena";
+cao.comer();
+cao.beber();
+cao.latir();
+</code></pre>
+                    </section>
+                </section>
+                <section>
+                  <img src="img/Thats_all_folks.svg.png">
+                </section>
+                <section>
+                  <h2>Referências</h2>
+                  <ul>
+                    <li><cite>A Short History of Javascript</cite> - <a href="https://www.w3.org/community/webed/wiki/A_Short_History_of_JavaScript">https://www.w3.org/community/webed/wiki/A_Short_History_of_JavaScript</a></li>
+                    <li><cite>JavaScript (MDN)</cite> - <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">https://developer.mozilla.org/en-US/docs/Web/JavaScript</a></li>
+                    <li><cite>JavaScript (Wikipedia)</cite> - <a href="http://en.wikipedia.org/wiki/JavaScript">http://en.wikipedia.org/wiki/JavaScript</a></li>
+                    <li><cite>JavaScript reference</cite> - <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference</a></li>
+                  </ul>
+                </section>
+            </div>
+        </div>
+
+        <!--
+        var dateRegEx = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/i;
+        var dateParts = dateRegEx.exec('00/00/0000');
+        console.log(dateParts)
+        -->
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // Optional reveal.js plugins
+                dependencies: [
+                    {src: 'lib/js/classList.js', condition: function () {
+                            return !document.body.classList;
+                        }},
+                    {src: 'plugin/markdown/marked.js', condition: function () {
+                            return !!document.querySelector('[data-markdown]');
+                        }},
+                    {src: 'plugin/markdown/markdown.js', condition: function () {
+                            return !!document.querySelector('[data-markdown]');
+                        }},
+                    {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                            return !!document.querySelector('pre code');
+                        }, callback: function () {
+                            hljs.initHighlightingOnLoad();
+                        }},
+                    {src: 'plugin/zoom-js/zoom.js', async: true},
+                    {src: 'plugin/notes/notes.js', async: true}
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
